@@ -23,16 +23,16 @@ The maze is defined in a text file with the following format:
 
 Example:
 
-22,7,6 \
-START,0,2,B,A \
-B,1,2,C,K \
-C,1,3,D,E \
-... \
-V,4,1,N,A \ 
-EXIT,6,2,A,A \
+22,7,6  
+START,0,2,B,A  
+B,1,2,C,K  
+C,1,3,D,E  
+...  
+V,4,1,N,A  
+EXIT,6,2,A,A
 
-Note: 
-"A" is used to represent there is no next linked vertex (null). \
+Note:   
+"A" is used to represent there is no next linked vertex (null).  
 "W" links to the exit.
 
 ## Usage
