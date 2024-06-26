@@ -72,9 +72,7 @@ public class Panel extends JPanel {
             for (Node node : pathNodes) {
                 highlightNode(g, node, Color.GREEN);
             }
-            for (Node node : finalPath.getPathNodes()) {
-                pathName += node.name + " ";
-            }
+            
             for (int i = 0; i < pathNodes.size() - 1; i++) {
                 Node currentNode = pathNodes.get(i);
                 Node nextNode = pathNodes.get(i + 1);
@@ -115,6 +113,16 @@ public class Panel extends JPanel {
         g.fillOval(x, y, nodeSize, nodeSize);
     }
     
+    private void updatePathName() {
+        if (finalPath != null) {
+            pathName = "";
+            for (Node node : finalPath.getPathNodes()) {
+                pathName += node.name + " ";
+            }
+        }
+    }
+
+    
     public void updateCurrentPath(ArrayList<Node> path) {
         this.currentPath = path;
         repaint();
@@ -122,7 +130,7 @@ public class Panel extends JPanel {
 
     public void updateFinalPath(Path path) {
         this.finalPath = path;
-        
+        updatePathName();
         repaint();
     }
     
